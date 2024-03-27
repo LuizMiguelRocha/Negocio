@@ -3,7 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="POU64.MainPage"
              Shell.NavBarIsVisible="false">
+  
 
-   <Label Text="Hello World"/>
-   <Image Source="floresta2"/>
+       <Grid>
+        <Image  Source="rio.png"
+                 Aspect="AspectFill"/>  
+
+       <Image Source="psyduk.png"
+              Margin="0,300,0,0" />
+       </Grid>         
 </ContentPage>
