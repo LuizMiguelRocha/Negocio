@@ -6,16 +6,19 @@
   
 
        <Grid>
+
         <Image  Source="rio.png"
                  Aspect="AspectFill"/>  
 
        <Image Source="psyduk.png"
-              Margin="0,300,0,0"/>
-
+              Margin="0,300,0,0"/>    
+     
           <Frame x:Name="frameEnergia"
-                 IsVisible="false"
-                 Margin="10,20"
+                 IsVisible="true"
+                 Margin="10,200,10,0"
+                 VerticalOptions="Fill"
                  BackgroundColor="White">
+          
           </Frame>       
        </Grid>         
 </ContentPage>
