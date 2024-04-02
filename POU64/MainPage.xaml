@@ -15,10 +15,11 @@
      
           <Frame x:Name="frameEnergia"
                  IsVisible="true"
-                 Margin="10,200,10,0"
-                 VerticalOptions="Fill"
-                 BackgroundColor="White">
+                 Margin="10,10,10,480"
+                 BackgroundColor="#ede9a1">
           
+          <ProgressBar x:Name="PBFome"/>
+
           </Frame>       
        </Grid>         
 </ContentPage>
