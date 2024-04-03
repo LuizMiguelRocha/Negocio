@@ -18,7 +18,45 @@
                  Margin="10,10,10,480"
                  BackgroundColor="#ede9a1">
           
-          <ProgressBar x:Name="PBFome"/>
+          <Grid>
+          <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+
+          <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="40"/>
+           <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>           
+
+          <Image Source="pizza.png"
+                 Grid.Column="0"
+                 Grid.Row="0"/>
+
+          <Image Source="agua.png"
+                 Grid.Column="0"
+                 Grid.Row="1"/>
+
+          <Image Source="pocaorosa.png"
+                 Grid.Column="0"
+                 Grid.Row="2"/>
+
+          <ProgressBar x:Name="ProgressBarFome"
+                       BackgroundColor="#024216"
+                       Grid.Column="1"
+                       Grid.Row="0"/>
+
+          <ProgressBar x:Name="ProgressBarSede"
+                       BackgroundColor="#336580"
+                       Grid.Column="1"
+                       Grid.Row="1"/>
+
+          <ProgressBar x:Name="ProgressBarSaude"
+                       BackgroundColor="#e78386"
+                       Grid.Column="1"
+                       Grid.Row="2"/>
+          </Grid>             
 
           </Frame>       
        </Grid>         
