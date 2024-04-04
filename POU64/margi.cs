@@ -1,12 +1,12 @@
 namespace Negocio;
 
-public class rosa : pokemon
+public class margi : pokemon
 {
-       public rosa()
+       public margi()
     {
         Fome = 0.5;
         Sede = 0.5;
         Saude = 0.5;
-        OutroPokemon = "rosa.png";
+        OutroPokemon = "magikarp.png";
     }
 }

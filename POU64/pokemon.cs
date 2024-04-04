@@ -31,4 +31,15 @@ public class pokemon
     {
         return Saude;
     }
+
+       public void SetFome(double f)
+    {
+        if (f <= 1 && f >= 0)
+          Fome = f;
+        else if (f > 1)
+            Fome = 1;
+        else
+            Fome = 0;    
+    }
+
 }

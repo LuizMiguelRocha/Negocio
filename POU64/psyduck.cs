@@ -4,9 +4,9 @@ public class psyduck : pokemon
 {
     public psyduck()
     {
-        Fome = 0.1;
-        Sede = 0.1;
-        Saude = 0.1;
+        Fome = 0.5;
+        Sede = 0.5;
+        Saude = 0.5;
         OutroPokemon = "psyduk.png";
     }
 }
