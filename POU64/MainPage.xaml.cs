@@ -37,17 +37,20 @@ public partial class MainPage : ContentPage
 
 	void Cume(object sender, EventArgs args)
 	{
-		
+		atual.SetFome(atual.GetFome() +0.1);
+		ProgressBarFome.Progress = atual.GetFome();
 	}
 
 	void Agua(object sender, EventArgs args)
 	{
-
+		atual.SetSede(atual.GetSede() +0.1);
+		ProgressBarSede.Progress = atual.GetSede();
 	}
 
 	void Cura(object sender, EventArgs args)
 	{
-
+		atual.SetSaude(atual.GetSaude() +0.1);
+		ProgressBarSaude.Progress = atual.GetSaude();
 	}
 
 }

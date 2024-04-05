@@ -42,4 +42,24 @@ public class pokemon
             Fome = 0;    
     }
 
+       public void SetSede(double s)
+    {
+        if (s <= 1 && s >= 0)
+          Sede = s;
+        else if (s > 1)
+            Sede = 1;
+        else
+            Sede = 0;    
+    }
+
+       public void SetSaude(double a)
+    {
+        if (a <= 1 && a >= 0)
+          Saude = a;
+        else if (a > 1)
+            Saude = 1;
+        else
+            Saude = 0;    
+    }
+
 }
