@@ -1,3 +1,5 @@
+using POU64;
+
 namespace Negocio;
 
 public class pokemon
@@ -49,7 +51,10 @@ public class pokemon
         else if (s > 1)
             Sede = 1;
         else
-            Sede = 0;    
+        {
+            Sede = 0;
+            Application.Current.MainPage = new Gameover();
+        }
     }
 
        public void SetSaude(double a)

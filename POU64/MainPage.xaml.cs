@@ -17,7 +17,24 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 
+		var timer = Application.Current.Dispatcher.CreateTimer();
+		timer.Interval = TimeSpan.FromSeconds(5);
+		timer.Tick += (s, e) => Tempo();
+		timer.Start();
+
 		atual = pato;
+	}
+
+	void Tempo()
+	{
+		atual.SetFome(atual.GetFome() - 0.01);
+		ProgressBarFome.Progress = atual.GetFome();
+
+		atual.SetSede(atual.GetSede() - 0.05);
+		ProgressBarSede.Progress = atual.GetSede();
+
+		atual.SetSaude(atual.GetSaude() - 0.01);
+		ProgressBarSaude.Progress = atual.GetSaude();
 	}
 
 	void TrocaPokemon(object sender, EventArgs args)
