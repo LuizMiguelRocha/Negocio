@@ -1,6 +1,7 @@
 ﻿
 
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Dispatching;
 using Negocio;
 
 namespace POU64;
@@ -9,32 +10,49 @@ namespace POU64;
 public partial class MainPage : ContentPage
 {
 	pokemon atual;
-	psyduck pato = new psyduck();
-	margi peixe = new margi();
-	rosa kirby = new rosa();
+	psyduck pato;
+	margi peixe;
+	rosa kirby;
+
+	IDispatcherTimer timer;
 
 	public MainPage()
 	{
 		InitializeComponent();
 
-		var timer = Application.Current.Dispatcher.CreateTimer();
-		timer.Interval = TimeSpan.FromSeconds(5);
+		pato = new psyduck();
+		peixe = new margi();
+		kirby = new rosa();
+
+		atual = pato;
+
+		timer = Application.Current.Dispatcher.CreateTimer();
+		timer.Interval = TimeSpan.FromSeconds(3);
 		timer.Tick += (s, e) => Tempo();
 		timer.Start();
 
-		atual = pato;
+		
+		ProgressBarFome.Progress = atual.GetFome();
+		ProgressBarSede.Progress = atual.GetSede();
+		ProgressBarSaude.Progress = atual.GetSaude();
 	}
 
 	void Tempo()
 	{
-		atual.SetFome(atual.GetFome() - 0.01);
+		atual.SetFome(atual.GetFome() - 0.05);
 		ProgressBarFome.Progress = atual.GetFome();
 
-		atual.SetSede(atual.GetSede() - 0.05);
+		atual.SetSede(atual.GetSede() - 0.1);
 		ProgressBarSede.Progress = atual.GetSede();
 
-		atual.SetSaude(atual.GetSaude() - 0.01);
+		atual.SetSaude(atual.GetSaude() - 0.02);
 		ProgressBarSaude.Progress = atual.GetSaude();
+
+		if (atual.GetMorto())
+		{
+			timer.Stop();
+			Application.Current.MainPage= new Gameover();
+		}
 	}
 
 	void TrocaPokemon(object sender, EventArgs args)

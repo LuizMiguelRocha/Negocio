@@ -9,6 +9,8 @@ public class pokemon
     protected double Sede;
     protected double Saude;
 
+    protected bool Morto;
+
     public pokemon()
     {
         OutroPokemon="";
@@ -41,7 +43,10 @@ public class pokemon
         else if (f > 1)
             Fome = 1;
         else
-            Fome = 0;    
+        {
+            Fome = 0;
+            Morto = true;    
+        }    
     }
 
        public void SetSede(double s)
@@ -53,7 +58,7 @@ public class pokemon
         else
         {
             Sede = 0;
-            Application.Current.MainPage = new Gameover();
+            Morto = true;
         }
     }
 
@@ -64,7 +69,15 @@ public class pokemon
         else if (a > 1)
             Saude = 1;
         else
-            Saude = 0;    
+        {
+            Saude = 0;
+            Morto = true;
+        }        
+    }
+
+    public bool GetMorto()
+    {
+        return Morto;
     }
 
 }
